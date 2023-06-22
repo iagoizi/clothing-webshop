@@ -1,0 +1,79 @@
+<!--This is a page for product articles, designed by Mykyta. Yes, I know that Mona had a prototype called products.html,
+but I decided to simply start over-->
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>PRODUCTS</title>
+    <link type="text/css" rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/mykyta-style.css" />
+    <script>
+      function openLink(link) {
+        //Opens a link. This is to be called from clicking on divs with products.
+        window.location = link;
+      }
+    </script>
+  </head>
+  <body>
+    <iframe
+      src="../iframes/sidebutton.html"
+      frameborder="0"
+      scrolling="no"
+      class="buttonframe"
+    ></iframe>
+
+    <!-- -->
+    <div class="title-text">
+      <p>PRODUCTS</p>
+      <h1>Here is the product list:</h1>
+    </div>
+
+    <div class="product-container">
+      <div class="entry-aligner">
+        <div class="product-entry">
+          <img
+            src="https://i.imgur.com/nrwas9n.jpg"
+            alt="Failed to lod the image"
+            class="product-picture"
+          />
+          <p class="price-tag">150$</p>
+          <p class="product-name">Mother äüö</p>
+          <p class="product-info">A factory new Motherboard</p>
+        </div>
+      </div>
+
+      <div class="entry-aligner" onclick="openLink('news.html')">
+        <!--Going to a different page works fine. -->
+        <div class="product-entry">
+          <img
+            src="https://i.imgur.com/nrwas9n.jpg"
+            alt="Failed to lod the image"
+            class="product-picture"
+          />
+          <p class="price-tag">150$</p>
+          <p class="product-name">
+            Mother äüö
+            <!-- We don't seem to have a problem with these characters, since they are included in UTF-8 (probably). Let's 
+                        just hope that we won't have any in the future -->
+          </p>
+          <p class="product-info">
+            A factory new Motherboardddd dddddddddddddddddddddddddddd
+            dddddddddddddddddddddddddddd dddddddddddddddddddddddddddd
+            dddddddddddddddddddddddddddd dddddddddddddddddddddddddddd
+            dddddddddddddddddddddddddddd dddddddddddddddddddddddddddddddd
+            <!-- I put this to test the script that limits the amount of characters per description. It works. -->
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <iframe
+      src="../iframes/bottom.html"
+      frameborder="0"
+      scrolling="no"
+      class="footer-iframe"
+    ></iframe>
+
+    <script src="../scripts/check-length.js"></script>
+  </body>
+</html>
