@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  *:focus{
+    outline: none;
+  }
+  
+  body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/common/backgroundLoogin.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+  
+  }
+  .form{
+    width: 400px;
+    height: auto;
+    color: black; 
+    font-family: sans-serif;
+  }
+  .heading{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 300;
+    margin-bottom: 50px;
+  }
+  input,
+  .submit-btn{
+    width: 80%;
+    height: 35px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+    background: rgba(222, 221, 221, 0.8);
+    border: none;
+    color: #000000;
+    padding: 17px;
+    transition: .5s;
+    text-transform: capitalize;
+  }
+  input::placeholder{
+    color: rgb(82, 79, 79);
+  }
+  input:focus,
+  .submit-btn:hover {
+    background: white;
+    color: #000;
+  }
+  
+  input:focus::placeholder{
+    color: black;
+  }
+  .submit-btn{
+    width: auto;
+    padding: 0 20px;
+    cursor: pointer;
+    margin: 30px auto 0;
+    background: rgba(222, 221, 221, 0.8);
+  }
+  .link{
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.8);
+    display: block;
+    margin: 30px auto;
+  }
+  .link:hover{
+    color: rgb(172, 171, 171);
+  }
+  .alert-box{
+    position: absolute;
+    top: 10% ;
+    left: 50%;
+    transform: translateX(-50%);
+    
+  }
