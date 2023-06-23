@@ -11,7 +11,7 @@ const createCartItemElement = (item) => {
   const info = document.createElement("div");
   const price = item.pricePerUnit * item.quantity;
   info.innerHTML = `
-        <div id="${item.id}-price">€${item.pricePerUnit * price}</div>
+        <div id="${item.id}-price">€${price}</div>
         <div id="${item.id}-description">${item.description}</div>
         <label for="${item.id}-quantity">Quantity</label>
         `;
