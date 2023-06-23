@@ -15,51 +15,7 @@
       <section class="card">
         <h1>My cart</h1>
 
-        <div id="cart-content">
-          <div id="product-1" class="flexbox product-overview">
-            <img
-              class="product-thumbnail"
-              src="https://i.imgur.com/nrwas9n.jpg"
-            />
-
-            <div>
-              <div id="product-1-price">€0.00</div>
-              <div id="product-1-description">Kids T-shirt</div>
-              <label for="product-1-quantity">Quantity</label>
-              <input id="product-1-quantity" type="number" value="1" min="0" />
-            </div>
-
-            <button
-              type="button"
-              id="product-1-close-button"
-              class="alert-btn"
-              onclick="removeFromView('product-1')"
-            >
-              X
-            </button>
-          </div>
-
-          <div id="product-2" class="flexbox">
-            <img
-              src="https://i.imgur.com/HtC01cF.png"
-              class="product-thumbnail"
-            />
-
-            <div>
-              <div id="product-2-price">
-                €0.00
-                <span id="product-2-old-price" class="old-price">€55.00</span>
-              </div>
-              <div id="product-2-description">Kids T-shirt</div>
-              <label for="product-2-quantity">Quantity</label>
-              <input id="product-2-quantity" type="number" value="1" min="0" />
-            </div>
-
-            <button type="button" id="product-2-close-button" class="alert-btn">
-              X
-            </button>
-          </div>
-        </div>
+        <div id="cart-content"></div>
       </section>
 
       <section class="card">
@@ -72,6 +28,8 @@
       </section>
     </main>
 
-    <script src="../scripts/cart.js"></script>
+    <script src="../scripts/cart/cart-datasource.js"></script>
+    <script src="../scripts/cart/cart-item-view.js"></script>
+    <script src="../scripts/cart/cart.js"></script>
   </body>
 </html>
