@@ -1,0 +1,73 @@
+.flexbox {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.flexbox-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 24px;
+    margin: 24px;
+}
+
+.product-thumbnail{
+    aspect-ratio: auto 1/1;
+    width: 100px;
+    margin-right: 16px;
+}
+
+.product-overview{
+    margin-bottom: 16px;
+}
+
+.old-price{
+    text-decoration: line-through;
+    color:gray;
+    font-size: 14px;
+}
+
+.alert-btn{
+    background-color: #6f0101;
+}
+
+.alert-btn:hover {
+    background-color: #4b0101;
+}
+
+.primary-btn{
+    margin-top: 16px;
+    text-transform: uppercase;
+    background-color: #47084d;
+}
+
+.primary-btn:hover {
+    background-color: #250029;
+}
+
+button {
+    padding: 4px 8px;
+    border-width: 0;
+    border-radius: 8px;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+main{
+    background: #efefef;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
