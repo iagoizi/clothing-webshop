@@ -75,12 +75,15 @@ button:hover {
     cursor: pointer;
 }
 
-main{
-    background: #efefef;
-    font-family: "Poppins", sans-serif;
-}
-
 h1 {
     font-size: 20px;
     margin-bottom: 16px;
+}
+
+html,
+body {
+    background: #efefef;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    height: 100%;
 }
