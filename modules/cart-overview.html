@@ -29,7 +29,12 @@
               <input id="product-1-quantity" type="number" value="1" min="0" />
             </div>
 
-            <button type="button" id="product-1-close-button" class="alert-btn">
+            <button
+              type="button"
+              id="product-1-close-button"
+              class="alert-btn"
+              onclick="removeFromView('product-1')"
+            >
               X
             </button>
           </div>
@@ -66,5 +71,7 @@
         <button class="primary-btn">Checkout</button>
       </section>
     </main>
+
+    <script src="../scripts/cart.js"></script>
   </body>
 </html>

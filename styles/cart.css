@@ -59,6 +59,11 @@
     background-color: #250029;
 }
 
+.fade-out {
+    opacity: 0;
+    transition: 0.5s;
+}
+
 button {
     padding: 4px 8px;
     border-width: 0;
