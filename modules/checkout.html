@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Checkout</title>
+    <link type="text/css" rel="stylesheet" href="../styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/cart.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="title-text">
+      <p>Finish your order and level up your style in a blink!</p>
+      <h1>Checkout</h1>
+    </div>
+
+    <main class="flexbox mobile-column">
+      <section class="card">
+        <h1>Checkout</h1>
+
+        <div id="cart-content"></div>
+      </section>
+
+      <section class="card">
+        <h1>Order details</h1>
+
+        <p>Sub-total: €<span id="subtotal">0.00</span></p>
+        <p>Total: €<span id="total">0.00</span></p>
+
+        <button class="primary-btn">Checkout</button>
+      </section>
+    </main>
+
+    <script src="../scripts/cart/cart-datasource.js"></script>
+    <script src="../scripts/cart/cart-item-view.js"></script>
+    <script src="../scripts/cart/checkout.js"></script>
+  </body>
+</html>
