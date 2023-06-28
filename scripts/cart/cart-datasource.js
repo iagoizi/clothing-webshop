@@ -2,7 +2,11 @@ const CartDatasource = {
   list: () => FAKE_DATA,
   getPrice: (shippingMethod) => {
     const price = FAKE_DATA.reduce(
-      (prev, item) => prev + item.quantity * item.pricePerUnit,
+      (prev, { quantity, pricePerUnit }) =>
+        prev +
+        quantity *
+          pricePerUnit *
+          (quantity >= 16 ? 0.84 : quantity >= 8 ? 0.92 : 1),
       0
     );
 
