@@ -4,6 +4,12 @@
     justify-content: center;
 }
 
+.flexbox-left {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
 .mobile-column {
     @media only screen and (max-width: 768px) {
         flex-direction: column;
@@ -78,6 +84,10 @@ button:hover {
 h1 {
     font-size: 20px;
     margin-bottom: 16px;
+}
+
+label{
+    margin-right: 8px;
 }
 
 html,

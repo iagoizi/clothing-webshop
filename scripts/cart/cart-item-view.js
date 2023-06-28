@@ -1,6 +1,6 @@
-const createCartItemElement = (item) => {
+const createCartItemElement = (item, isCheckout = false) => {
   const product = document.createElement("div");
-  product.classList.add("flexbox", "product-overview");
+  product.classList.add("flexbox-left", "product-overview");
   product.id = item.id;
 
   const img = document.createElement("img");
@@ -13,29 +13,43 @@ const createCartItemElement = (item) => {
   info.innerHTML = `
         <div id="${item.id}-price">€${price}</div>
         <div id="${item.id}-description">${item.description}</div>
-        <label for="${item.id}-quantity">Quantity</label>
         `;
-  const inputQuantity = document.createElement("input");
-  inputQuantity.id = `${item.id}-quantity`;
-  inputQuantity.type = "number";
-  inputQuantity.value = item.quantity;
-  inputQuantity.min = 0;
-  inputQuantity.addEventListener("blur", (element) => {
-    if (+element.currentTarget.value === 0) {
-      removeFromView(item.id);
-    }
-  });
-  info.appendChild(inputQuantity);
+  if (!isCheckout) {
+    const inputId = `${item.id}-quantity`;
+
+    const inputLabel = document.createElement("label");
+    inputLabel.for = inputId;
+    inputLabel.textContent = "Quantity";
+    info.appendChild(inputLabel);
+
+    const inputQuantity = document.createElement("input");
+    inputQuantity.id = `${item.id}-quantity`;
+    inputQuantity.type = "number";
+    inputQuantity.value = item.quantity;
+    inputQuantity.min = 0;
+    inputQuantity.disabled = isCheckout;
+    inputQuantity.addEventListener("blur", (element) => {
+      if (+element.currentTarget.value === 0) {
+        removeFromView(item.id);
+      }
+    });
+    info.appendChild(inputQuantity);
+  } else {
+    const staticQuantity = document.createElement("p");
+    staticQuantity.textContent = `Quantity: ${item.quantity}`;
+    info.appendChild(staticQuantity);
+  }
 
   product.appendChild(info);
 
-  const removeBtn = document.createElement("button");
-  removeBtn.type = "button";
-  removeBtn.classList.add("alert-btn");
-  removeBtn.textContent = "X";
-  removeBtn.addEventListener("click", () => removeFromView(item.id));
-  product.appendChild(removeBtn);
-
+  if (!isCheckout) {
+    const removeBtn = document.createElement("button");
+    removeBtn.type = "button";
+    removeBtn.classList.add("alert-btn");
+    removeBtn.textContent = "X";
+    removeBtn.addEventListener("click", () => removeFromView(item.id));
+    product.appendChild(removeBtn);
+  }
   return product;
 };
 
