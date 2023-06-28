@@ -19,12 +19,14 @@
 </head>
 
 <body>
-
+    <?php
+    session_start();
+    ?>
     <section id="banner">
         <img class="logo" src="../img/common/logo.png">
         <div class="banner-text">
             <h1> Clothes Company </h1>
-            <h2>Welcome to our website.</h2>
+            <h2>Welcome to our website, <?php echo $_SESSION['name'] ?></h2>
             <p> A STYLE FOR EVERY STORY.</p>
 
             <div class="banner-btn">
