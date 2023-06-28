@@ -18,18 +18,71 @@
 
     <main class="flexbox mobile-column">
       <section class="card">
-        <h1>Checkout</h1>
+        <h1>Order overview</h1>
 
         <div id="cart-content"></div>
+
+        <button class="secondary-btn">Edit order</button>
       </section>
 
       <section class="card">
         <h1>Order details</h1>
 
-        <p>Sub-total: €<span id="subtotal">0.00</span></p>
-        <p>Total: €<span id="total">0.00</span></p>
+        <form onsubmit="(a)=>console.log(a)">
+          <h2>Personal data</h2>
 
-        <button class="primary-btn">Checkout</button>
+          <label>Name</label><input type="text" name="name" required /> <br />
+          <label>ID</label><input type="text" name="identification" required />
+          <br />
+
+          <h2>Shipping</h2>
+
+          <p>
+            Your order will be delivered to one of our physical stores and will
+            be ready for take out in around
+            <span id="waiting-time">1 week</span> weeks after the payment.
+          </p>
+
+          <label for="city">Send to the store in </label>
+          <select id="city" name="city">
+            <option value="Reutlingen" selected>Reutlingen</option>
+            <option value="Tubingen">Tübingen</option>
+            <option value="Munich">München</option>
+            <option value="Nuremberg">Nürnberg</option>
+          </select>
+          <br />
+
+          <label for="shipping-method">Shipping method: </label>
+          <select id="shipping-method" name="shipping-method">
+            <option value="DPD" selected>1x DPD</option>
+            <option value="DHL">1x DHL</option>
+            <option value="DHL-express">1x DHL Express</option>
+          </select>
+          <br />
+
+          <div id="price-container">
+            <p>Sub-total: €<span id="subtotal">0.00</span></p>
+            <p>
+              Shipping price: €
+              <span id="shipping-price">0.00</span>.
+            </p>
+            <p>Total: €<span id="total">0.00</span></p>
+          </div>
+
+          <div>
+            <input
+              id="data-protection-checkbox"
+              type="checkbox"
+              name="checkbox"
+              required
+            />
+            <label for="data-protection-checkbox"
+              >I agree to the data protection.</label
+            >
+          </div>
+
+          <button class="primary-btn">Finish order (pay)</button>
+        </form>
       </section>
     </main>
 

@@ -1,5 +1,18 @@
 const CartDatasource = {
   list: () => FAKE_DATA,
+  getPrice: (shippingMethod) => {
+    const price = FAKE_DATA.reduce(
+      (prev, item) => prev + item.quantity * item.pricePerUnit,
+      0
+    );
+
+    return shippingMethod
+      ? price + SHIPPING_CONTEXT[shippingMethod].price
+      : price;
+  },
+  getWaitingTime: (shippingMethod) =>
+    SHIPPING_CONTEXT[shippingMethod].waitingTimeWeeks,
+  getShippingPrice: (shippingMethod) => SHIPPING_CONTEXT[shippingMethod].price,
 };
 
 const FAKE_DATA = [
@@ -46,3 +59,9 @@ const FAKE_DATA = [
     quantity: 1,
   },
 ];
+
+const SHIPPING_CONTEXT = {
+  DPD: { price: 1, waitingTimeWeeks: 7 }, //15 euros cheaper than DHL
+  DHL: { price: 16, waitingTimeWeeks: 5 }, //67 euros cheaper than DHL Express
+  "DHL-express": { price: 83, waitingTimeWeeks: 1 },
+};

@@ -65,9 +65,32 @@
     background-color: #250029;
 }
 
+.secondary-btn {
+    margin-top: 16px;
+    text-transform: uppercase;
+    color: #47084d;
+    border-color: #47084d;
+    background-color: #fff;
+    border-width: 2px;
+}
+
+.secondary-btn:hover {
+    color: #250029;
+    border-color: #250029;
+    background-color: #dfc4e1;
+}
+
 .fade-out {
     opacity: 0;
     transition: 0.5s;
+}
+
+#waiting-time{
+    font-weight: bold;
+}
+
+#price-container p{
+    margin-top: 8px;
 }
 
 button {
@@ -86,8 +109,19 @@ h1 {
     margin-bottom: 16px;
 }
 
+h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
 label{
     margin-right: 8px;
+}
+
+input, select{
+    margin-top: 8px;
+    padding: 2px;
 }
 
 html,
