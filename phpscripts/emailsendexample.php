@@ -36,6 +36,7 @@ try {
     //$mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
     $mail->addAddress('mykyta.kusmerchuk@student.reutlingen-university.de');   
     //This is where we set the email we want to send to
+    //We can add several adresses, by calling this function several times
     //Name is optional
     $mail->addReplyTo('webshopmakula@gmail.com', 'Information');
  

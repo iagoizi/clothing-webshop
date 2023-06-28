@@ -38,11 +38,16 @@ but I decided to simply start over-->
           />
           <p class="price-tag">150$</p>
           <p class="product-name">Mother äüö</p>
+          <p class="available-amount-container">Available: <b class="available-amount">6</b></p>
           <p class="product-info">A factory new Motherboard</p>
+          <div class="add-to-cart-button-bar">
+            <div class="add-to-cart-button-bar-button small-bottom-border" onclick="openLink('+.html')">+</div>
+            <div class="add-to-cart-button-bar-button" onclick="openLink('-.html')">-</div>
+          </div>
         </div>
       </div>
 
-      <div class="entry-aligner" onclick="openLink('news.html')">
+      <div class="entry-aligner" onclick="">
         <!--Going to a different page works fine. -->
         <div class="product-entry">
           <img
@@ -56,6 +61,7 @@ but I decided to simply start over-->
             <!-- We don't seem to have a problem with these characters, since they are included in UTF-8 (probably). Let's 
                         just hope that we won't have any in the future -->
           </p>
+          <p class="available-amount-container">Available: <b class="available-amount">6</b></p>
           <p class="product-info">
             A factory new Motherboardddd dddddddddddddddddddddddddddd
             dddddddddddddddddddddddddddd dddddddddddddddddddddddddddd
@@ -63,6 +69,10 @@ but I decided to simply start over-->
             dddddddddddddddddddddddddddd dddddddddddddddddddddddddddddddd
             <!-- I put this to test the script that limits the amount of characters per description. It works. -->
           </p>
+          <div class="add-to-cart-button-bar">
+            <div class="add-to-cart-button-bar-button small-bottom-border" onclick="openLink('+.html')">+</div>
+            <div class="add-to-cart-button-bar-button" onclick="openLink('-.html')">-</div>
+          </div>
         </div>
       </div>
     </div>
