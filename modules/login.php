@@ -6,9 +6,13 @@
     <title>Login Page</title>
 
     <link rel="stylesheet" href="../styles/login.css">
+        <link type="text/css" rel="stylesheet" href="../styles/navbar.css" />
+
 
 </head>
 <body>
+    <nav id="navbar"></nav>
+
 
     <div class="alert-box">
         <p class="alert"></p>
@@ -33,6 +37,7 @@
     </div>
     </form>
     <script src="../scripts/login.js"></script>
+    <script src="../scripts/navbar.js"></script>
 
 </body>
 </html>

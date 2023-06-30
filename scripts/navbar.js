@@ -23,18 +23,3 @@
         </div>
         `;
 })();
-
-/*
-<div>
-        <a href="./index.php">Home</a>
-        <a href="./contact.html">Contact</a>
-        <a href="./news.html">News</a>
-        <a href="./productpage.html">All products</a>
-      </div>
-
-      <div>
-        <a href="./cart-overview.html">Cart</a>
-        <a href="./login.php">Login</a>
-        <a href="./register.php">Register</a>
-      </div>
-*/
