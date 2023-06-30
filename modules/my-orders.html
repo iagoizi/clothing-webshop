@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>My orders</title>
+    <link type="text/css" rel="stylesheet" href="../styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/cart.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/navbar.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+
+    <div class="title-text">
+      <p>Check previous orders and even buy again if you desire</p>
+      <h1>My orders</h1>
+    </div>
+
+    <section id="order-01-container" class="card">
+      <h1>Order number 123123123ABCS</h1>
+      <div id="order-01-container" class="flexbox-left">
+        <div id="order-01-products">
+          <h2>Products</h2>
+        </div>
+        <div id="order-01-overview">
+          <h2>Overview</h2>
+
+          <p>Sub-total: €<span id="order-01-subtotal">0.00</span></p>
+          <br />
+          <p>
+            Shipping: [<span id="order-01-shipping-method">1x DPD</span>] €<span
+              id="order-01-shipping-price"
+              >0.00
+            </span>
+          </p>
+          <br />
+          <p>Total: €<span id="order-01-total">0.00</span></p>
+          <button class="primary-btn">Buy again</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="../scripts/cart/local-storage-datasource.js"></script>
+    <script src="../scripts/cart/cart-datasource.js"></script>
+    <script src="../scripts/cart/cart-item-view.js"></script>
+    <script src="../scripts/navbar.js"></script>
+  </body>
+</html>
