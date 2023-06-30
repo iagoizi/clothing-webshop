@@ -1,0 +1,10 @@
+img{
+    max-width: 700px;
+    margin-bottom: 24px;
+}
+
+.thanks-container{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}

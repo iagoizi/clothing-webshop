@@ -30,7 +30,6 @@
     background-color: rgb(242, 242, 242);
     text-align: left;
     border: 1px rgb(242, 242, 242) solid;
-    cursor: pointer;
     position: relative;
 }
 .product-picture{
