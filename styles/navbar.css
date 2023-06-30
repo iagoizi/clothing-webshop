@@ -1,0 +1,24 @@
+
+
+#navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    box-sizing: border-box;
+    background-color: #47084d;
+}
+
+#navbar a {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+}
+
+#navbar a:hover {
+    padding: 12px;
+    text-decoration: underline;
+}
