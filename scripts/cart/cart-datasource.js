@@ -1,7 +1,11 @@
 const CartDatasource = {
-  list: () => FAKE_DATA,
+  list: () => LocalStorageDatasource.getCart(),
+  getItemPrice: ({ quantity, pricePerUnit }) =>
+    quantity *
+    pricePerUnit *
+    (quantity >= 16 ? 0.84 : quantity >= 8 ? 0.92 : 1),
   getPrice: (shippingMethod) => {
-    const price = FAKE_DATA.reduce(
+    const price = LocalStorageDatasource.getCart().reduce(
       (prev, { quantity, pricePerUnit }) =>
         prev +
         quantity *
@@ -14,55 +18,31 @@ const CartDatasource = {
       ? price + SHIPPING_CONTEXT[shippingMethod].price
       : price;
   },
+  getOriginalPrice: () =>
+    LocalStorageDatasource.getCart().reduce(
+      (prev, { quantity, pricePerUnit }) => prev + quantity * pricePerUnit,
+      0
+    ),
   getWaitingTime: (shippingMethod) =>
     SHIPPING_CONTEXT[shippingMethod].waitingTimeWeeks,
   getShippingPrice: (shippingMethod) => SHIPPING_CONTEXT[shippingMethod].price,
-};
+  updateItem: (id, updatedItem) => {
+    const cart = LocalStorageDatasource.getCart();
+    const itemIndex = cart.findIndex(({ id: currentId }) => id === currentId);
 
-const FAKE_DATA = [
-  {
-    id: "product-1",
-    description: "Kids T-shirt",
-    thumbnail: "https://i.imgur.com/nrwas9n.jpg",
-    pricePerUnit: 10,
-    quantity: 1,
+    if (updatedItem.quantity === 0) {
+      cart.splice(itemIndex, 1);
+    } else if (itemIndex === -1) {
+      cart.push(updatedItem);
+    } else {
+      cart[itemIndex] = { ...cart[itemIndex], ...updatedItem };
+    }
+
+    LocalStorageDatasource.updateCart(cart);
+    CartDatasource.updateHandlers.map((fn) => fn());
   },
-  {
-    id: "product-2",
-    description: "Star Girl Hoodie",
-    thumbnail: "https://i.imgur.com/HtC01cF.png",
-    pricePerUnit: 10,
-    quantity: 1,
-  },
-  {
-    id: "product-3",
-    description: "T-shirt",
-    thumbnail: "https://i.imgur.com/jibvF37.jpg",
-    pricePerUnit: 10,
-    quantity: 1,
-  },
-  {
-    id: "product-4",
-    description: "Saracura Pants",
-    thumbnail: "https://i.imgur.com/xg7udSL.jpg",
-    pricePerUnit: 10,
-    quantity: 1,
-  },
-  {
-    id: "product-5",
-    description: "Star Girl Hoodie",
-    thumbnail: "https://i.imgur.com/HtC01cF.png",
-    pricePerUnit: 10,
-    quantity: 1,
-  },
-  {
-    id: "product-6",
-    description: "Winx boy Hoodie",
-    thumbnail: "https://i.imgur.com/5eAPpoV.jpg",
-    pricePerUnit: 10,
-    quantity: 1,
-  },
-];
+  updateHandlers: [],
+};
 
 const SHIPPING_CONTEXT = {
   DPD: { price: 1, waitingTimeWeeks: 7 }, //15 euros cheaper than DHL

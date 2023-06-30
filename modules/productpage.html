@@ -7,6 +7,8 @@ but I decided to simply start over-->
     <title>PRODUCTS</title>
     <link type="text/css" rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/mykyta-style.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/navbar.css" />
+
     <script>
       function openLink(link) {
         //Opens a link. This is to be called from clicking on divs with products.
@@ -15,12 +17,7 @@ but I decided to simply start over-->
     </script>
   </head>
   <body>
-    <iframe
-      src="../iframes/sidebutton.html"
-      frameborder="0"
-      scrolling="no"
-      class="buttonframe"
-    ></iframe>
+    <nav id="navbar"></nav>
 
     <!-- -->
     <div class="title-text">
@@ -38,11 +35,23 @@ but I decided to simply start over-->
           />
           <p class="price-tag">150$</p>
           <p class="product-name">Mother äüö</p>
-          <p class="available-amount-container">Available: <b class="available-amount">6</b></p>
+          <p class="available-amount-container">
+            Available: <b class="available-amount">6</b>
+          </p>
           <p class="product-info">A factory new Motherboard</p>
           <div class="add-to-cart-button-bar">
-            <div class="add-to-cart-button-bar-button small-bottom-border" onclick="openLink('+.html')">+</div>
-            <div class="add-to-cart-button-bar-button" onclick="openLink('-.html')">-</div>
+            <div
+              class="add-to-cart-button-bar-button small-bottom-border"
+              onclick="openLink('+.html')"
+            >
+              +
+            </div>
+            <div
+              class="add-to-cart-button-bar-button"
+              onclick="openLink('-.html')"
+            >
+              -
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +70,9 @@ but I decided to simply start over-->
             <!-- We don't seem to have a problem with these characters, since they are included in UTF-8 (probably). Let's 
                         just hope that we won't have any in the future -->
           </p>
-          <p class="available-amount-container">Available: <b class="available-amount">6</b></p>
+          <p class="available-amount-container">
+            Available: <b class="available-amount">6</b>
+          </p>
           <p class="product-info">
             A factory new Motherboardddd dddddddddddddddddddddddddddd
             dddddddddddddddddddddddddddd dddddddddddddddddddddddddddd
@@ -70,8 +81,18 @@ but I decided to simply start over-->
             <!-- I put this to test the script that limits the amount of characters per description. It works. -->
           </p>
           <div class="add-to-cart-button-bar">
-            <div class="add-to-cart-button-bar-button small-bottom-border" onclick="openLink('+.html')">+</div>
-            <div class="add-to-cart-button-bar-button" onclick="openLink('-.html')">-</div>
+            <div
+              class="add-to-cart-button-bar-button small-bottom-border"
+              onclick="openLink('+.html')"
+            >
+              +
+            </div>
+            <div
+              class="add-to-cart-button-bar-button"
+              onclick="openLink('-.html')"
+            >
+              -
+            </div>
           </div>
         </div>
       </div>
@@ -85,5 +106,6 @@ but I decided to simply start over-->
     ></iframe>
 
     <script src="../scripts/check-length.js"></script>
+    <script src="../scripts/navbar.js"></script>
   </body>
 </html>

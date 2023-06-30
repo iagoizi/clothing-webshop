@@ -8,6 +8,8 @@
 
     <title> HDAMN Clothing Company </title>
     <link type="text/css" rel="stylesheet" href="../styles/style.css">
+        <link type="text/css" rel="stylesheet" href="../styles/navbar.css" />
+
 
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
@@ -26,6 +28,9 @@
         header('location: login.php');
     }
     ?>
+
+        <nav id="navbar"></nav>
+
     <section id="banner">
         <img class="logo" src="../img/common/logo.png">
         <div class="banner-text">
@@ -285,6 +290,8 @@
 
     <script src="../scripts/index.js">
     </script>
+        <script src="../scripts/navbar.js"></script>
+
 
 </body>
 
