@@ -29,8 +29,10 @@
             <a href="./cart-overview.html">Cart (<span id="cart-badge">${cartItemsCount}</span>)</a>
             ${
               loggedIn
-                ? `<a href="../phpscripts/terminate.php" class="alert-btn">Logout</a>
-                   <a class="alert-btn">`+username+`</a>`
+                ? `                
+                <a href="./my-orders.html">My orders</a>
+                <a href="../phpscripts/terminate.php" class="alert-btn">Logout</a>
+                   <a class="alert-btn">${username}</a>`
                 : `<a href="./login.php">Login</a>
                 <a href="./register.php">Register</a>`
             }
