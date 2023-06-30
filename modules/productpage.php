@@ -63,6 +63,38 @@ but I decided to simply start over-->
         </div>
       </div>
     </div>
+    <?php 
+    session_start();
+    $connection = mysqli_connect('localhost', 'Webshop_user', 'Webshop_password', 'webshop');
+    $check_query = "SELECT * FROM ARTICLES";
+    $result = mysqli_query($connection, $check_query);
+    while($row = mysqli_fetch_assoc($result)) {
+        $id = $row['ID'];
+        $name = $row['NAME'];
+        $price = $row['PRICE'];
+        $description = $row['DESCRIPTION'];
+        $items_left = $row['ITEMS_LEFT'];
+        $image = $row['IMAGE'];
+        $imagedata = 'data:image/jpeg;base64,'.base64_encode($row['IMAGE']);
+        echo '<div  id="product-'.$id.'" class="entry-aligner">
+            <div class="product-entry">';
+        echo '<img alt="Failed to load the image" class="product-picture" src="'.$imagedata.'"/>';
+        echo '<p class="price-tag">€'.$price.'</p>
+            <p class="product-name">'.$name.'</p>
+            <p class="available-amount-container">
+                Available: <b class="available-amount">'.$items_left.'</b>
+            </p>
+            <p class="product-info">'.$description.'</p>
+            <div class="add-to-cart-container">
+                <!-- The max will depend on the quantity we have available -->
+                <input  id="product-'.$id.'-input" type="number" min="0" max="'.$items_left.'" value="0"/>
+                <button class="add-to-cart-btn" onclick="addProductToCart({id: \'product-'.$id.'\', description: \''.$name.'\', thumbnail: \''.$imagedata.'\', pricePerUnit: 150 })">Add to cart</button>
+            </div>
+        </div>
+    </div>';
+    }
+?>
+
 
   </div>
 

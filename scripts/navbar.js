@@ -22,7 +22,7 @@
             <a href="./index.php">Home</a>
             <a href="./contact.html">Contact</a>
             <a href="./news.html">News</a>
-            <a href="./productpage.html">All products</a>
+            <a href="./productpage.php">All products</a>
         </div>
 
         <div>
