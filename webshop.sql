@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2023 at 08:33 AM
+-- Generation Time: Jun 30, 2023 at 01:18 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -83,7 +83,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`USERNAME`, `ID`, `LAST_ONLINE`, `PASSWORD`, `CONFIRMATION_CODE`, `IS_ONLINE`, `CURRENT_BASKET`, `EMAIL`, `IS_VERIFIED`, `SCREEN_RES`, `OS`) VALUES
-('kill', 5, '2023-06-28 20:10:58', '9627fa799f49feab3956080cfea37827382bc12f99a49f6998803c596cd2b0a1dc7b29ec8dcbf70cda340979c963c686b83cb7b47090a89f448391f154a7d589', '', 0, '', 'thenicest2003@gmail.com', 1, '', '');
+('kill', 5, '2023-06-30 12:47:00', '9627fa799f49feab3956080cfea37827382bc12f99a49f6998803c596cd2b0a1dc7b29ec8dcbf70cda340979c963c686b83cb7b47090a89f448391f154a7d589', '', 0, '', 'thenicest2003@gmail.com', 1, '', '');
 
 --
 -- Indexes for dumped tables
