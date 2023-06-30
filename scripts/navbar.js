@@ -4,6 +4,13 @@
   //later, we will replace this by the actual logged in/logged out check
   const loggedIn = false;
 
+  const cartItemsCount = CartDatasource.list().length;
+
+  CartDatasource.updateHandlers.push(() => {
+    document.querySelector("#cart-badge").textContent =
+      CartDatasource.list().length;
+  });
+
   navbar.innerHTML = `
         <div>
             <a href="./index.php">Home</a>
@@ -13,7 +20,7 @@
         </div>
 
         <div>
-            <a href="./cart-overview.html">Cart</a>
+            <a href="./cart-overview.html">Cart (<span id="cart-badge">${cartItemsCount}</span>)</a>
             ${
               loggedIn
                 ? `<a href="./login.php" class="alert-btn">Logout</a>`
