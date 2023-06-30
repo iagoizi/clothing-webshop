@@ -11,19 +11,24 @@ const shippingPriceView = document.querySelector("#shipping-price");
     cartContainer.appendChild(productOverview);
   });
 
-  subtotalView.textContent = CartDatasource.getPrice();
-  totalView.textContent = CartDatasource.getPrice("DPD");
+  subtotalView.textContent = formatPrice(CartDatasource.getPrice());
+  totalView.textContent = formatPrice(CartDatasource.getPrice("DPD"));
   waitingTimeView.textContent = CartDatasource.getWaitingTime("DPD");
-  shippingPriceView.textContent = CartDatasource.getShippingPrice("DPD");
+  shippingPriceView.textContent = formatPrice(
+    CartDatasource.getShippingPrice("DPD")
+  );
 })();
 
 document
   .querySelector("#shipping-method")
   .addEventListener("change", (event) => {
     const newShippingMethod = event.target.value;
-    totalView.textContent = CartDatasource.getPrice(newShippingMethod);
+    totalView.textContent = formatPrice(
+      CartDatasource.getPrice(newShippingMethod)
+    );
     waitingTimeView.textContent =
       CartDatasource.getWaitingTime(newShippingMethod);
-    shippingPriceView.textContent =
-      CartDatasource.getShippingPrice(newShippingMethod);
+    shippingPriceView.textContent = formatPrice(
+      CartDatasource.getShippingPrice(newShippingMethod)
+    );
   });
