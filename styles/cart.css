@@ -90,6 +90,10 @@
     display: none;
 }
 
+.products-column{
+    margin-right: 24px;
+}
+
 #waiting-time{
     font-weight: bold;
 }
