@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $email = $_POST['email'];
 $oldpassword = $_POST['old-password'];
 $new_password = $_POST['new-password'];
@@ -39,7 +38,7 @@ $encrpassword_new = hash_init('sha512');
 hash_update($encrpassword_new, $new_password);
 $password_encryption_new = hash_final($encrpassword_new);
 
-$update_query = "UPDATE `users` SET `PASSWORD` = '$password_encryption_new' WHERE `users`.`ID` = '$id' ";
+$update_query = "UPDATE `users` SET `PASSWORD` = '$password_encryption_new', `IS_VERIFIED` = '1' WHERE `users`.`ID` = '$id' ";
 mysqli_query($connection, $update_query);
 
 header('location: ../modules/index.php')

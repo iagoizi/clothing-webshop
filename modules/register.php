@@ -28,7 +28,7 @@
             <input type="submit" value="Register" class="submit-btn">
             <?php
             if(isset($_GET['error']))
-              echo '<p style="color=red">'.$_GET['error'].'</p>';
+              echo '<p style="color: red">'.$_GET['error'].'</p>';
 
             ?>
             <a href="login.php" class="link">already have an account ? log in here</a>

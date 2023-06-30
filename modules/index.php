@@ -21,6 +21,10 @@
 <body>
     <?php
     session_start();
+    if(!isset($_SESSION['name']))
+    {
+        header('location: login.php');
+    }
     ?>
     <section id="banner">
         <img class="logo" src="../img/common/logo.png">
