@@ -37,6 +37,8 @@
     </div>
     </form>
     <script src="../scripts/login.js"></script>
+    <script src="../scripts/cart/local-storage-datasource.js"></script>
+    <script src="../scripts/cart/cart-datasource.js"></script>
     <script src="../scripts/navbar.js"></script>
 
 </body>

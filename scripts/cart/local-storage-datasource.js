@@ -11,6 +11,7 @@ const LocalStorageDatasource = {
   },
   updateCart: (updatedCart) =>
     localStorage.setItem("cart", JSON.stringify(updatedCart)),
+  clear: () => localStorage.setItem("cart", JSON.stringify([])),
 };
 
 const FAKE_DATA = [
