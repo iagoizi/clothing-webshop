@@ -1,9 +1,6 @@
 (() => {
   const navbar = document.querySelector("#navbar");
 
-  //later, we will replace this by the actual logged in/logged out check
-  const loggedIn = false;
-
   const cartItemsCount = CartDatasource.list().length;
 
   CartDatasource.updateHandlers.push(() => {
@@ -11,7 +8,16 @@
       CartDatasource.list().length;
   });
 
-  navbar.innerHTML = `
+  // Make an AJAX request to check session status
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "../phpscripts/checksession.php", true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      a = xhr.responseText.split("-");
+      const loggedIn = a[0] === "true";
+      const username = a[1]; // This contains the username
+
+      navbar.innerHTML = `
         <div>
             <a href="./index.php">Home</a>
             <a href="./contact.html">Contact</a>
@@ -28,5 +34,8 @@
                 <a href="./register.php">Register</a>`
             }
         </div>
-        `;
+      `;
+    }
+  };
+  xhr.send();
 })();
