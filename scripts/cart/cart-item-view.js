@@ -33,6 +33,12 @@ const createCartItemElement = (item, isCheckout = false) => {
         removeFromView(item.id);
       }
     });
+    inputQuantity.addEventListener("change", (element) =>
+      CartDatasource.updateItem(item.id, {
+        ...item,
+        quantity: +element.currentTarget.value,
+      })
+    );
     info.appendChild(inputQuantity);
   } else {
     const staticQuantity = document.createElement("p");
@@ -47,7 +53,13 @@ const createCartItemElement = (item, isCheckout = false) => {
     removeBtn.type = "button";
     removeBtn.classList.add("alert-btn");
     removeBtn.textContent = "X";
-    removeBtn.addEventListener("click", () => removeFromView(item.id));
+    removeBtn.addEventListener("click", () => {
+      CartDatasource.updateItem(item.id, {
+        ...item,
+        quantity: 0,
+      });
+      removeFromView(item.id);
+    });
     product.appendChild(removeBtn);
   }
   return product;

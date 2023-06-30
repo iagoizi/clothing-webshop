@@ -17,6 +17,20 @@ const CartDatasource = {
   getWaitingTime: (shippingMethod) =>
     SHIPPING_CONTEXT[shippingMethod].waitingTimeWeeks,
   getShippingPrice: (shippingMethod) => SHIPPING_CONTEXT[shippingMethod].price,
+  updateItem: (id, updatedItem) => {
+    const cart = LocalStorageDatasource.getCart();
+    const itemIndex = cart.findIndex(({ id: currentId }) => id === currentId);
+
+    if (updatedItem.quantity === 0) {
+      cart.splice(itemIndex, 1);
+    } else if (itemIndex === -1) {
+      cart.push(updatedItem);
+    } else {
+      cart[itemIndex] = { ...cart[itemIndex], ...updatedItem };
+    }
+
+    LocalStorageDatasource.updateCart(cart);
+  },
 };
 
 const SHIPPING_CONTEXT = {
