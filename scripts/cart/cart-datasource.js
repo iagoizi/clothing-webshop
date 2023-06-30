@@ -39,7 +39,9 @@ const CartDatasource = {
     }
 
     LocalStorageDatasource.updateCart(cart);
+    CartDatasource.updateHandlers.map((fn) => fn());
   },
+  updateHandlers: [],
 };
 
 const SHIPPING_CONTEXT = {
