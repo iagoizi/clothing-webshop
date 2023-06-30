@@ -29,8 +29,8 @@ but I decided to simply start over-->
     <h1>Here is the product list:</h1>
   </div>
 
-  <div class="product-container">
-    <div id="product-01" class="entry-aligner">
+   <div class="product-container">
+    <!--<div id="product-01" class="entry-aligner">
       <div class="product-entry">
         <img src="https://i.imgur.com/nrwas9n.jpg" alt="Failed to lod the image" class="product-picture" />
         <p class="price-tag">€77</p>
@@ -39,15 +39,15 @@ but I decided to simply start over-->
           Available: <b class="available-amount">6</b>
         </p>
         <p class="product-info">A Motherboard</p>
-        <div class="add-to-cart-container">
+        <div class="add-to-cart-container"> -->
           <!-- The max will depend on the quantity we have available -->
-          <input  id="product-01-input" type="number" min="0" max="7" value="0"/>
+          <!-- <input  id="product-01-input" type="number" min="0" max="7" value="0"/>
           <button class="add-to-cart-btn" onclick="addProductToCart({id: 'product-01', description: 'Mother ääää', thumbnail: 'https:\/\/i.imgur.com/nrwas9n.jpg', pricePerUnit: 77 })">Add to cart</button>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div  id="product-02" class="entry-aligner">
+    <!-- <div  id="product-02" class="entry-aligner">
       <div class="product-entry">
         <img src="https://i.imgur.com/nrwas9n.jpg" alt="Failed to lod the image" class="product-picture" />
         <p class="price-tag">€150</p>
@@ -56,13 +56,13 @@ but I decided to simply start over-->
           Available: <b class="available-amount">7</b>
         </p>
         <p class="product-info">A factory new Motherboard</p>
-        <div class="add-to-cart-container">
+        <div class="add-to-cart-container"> -->
           <!-- The max will depend on the quantity we have available -->
-          <input  id="product-02-input" type="number" min="0" max="7" value="0"/>
+          <!-- <input  id="product-02-input" type="number" min="0" max="7" value="0"/>
           <button class="add-to-cart-btn" onclick="addProductToCart({id: 'product-02', description: 'Mother äüö', thumbnail: 'https:\/\/i.imgur.com/nrwas9n.jpg', pricePerUnit: 150 })">Add to cart</button>
         </div>
       </div>
-    </div>
+    </div> -->
     <?php 
     session_start();
     $connection = mysqli_connect('localhost', 'Webshop_user', 'Webshop_password', 'webshop');

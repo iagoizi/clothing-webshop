@@ -17,7 +17,7 @@
 }
 .product-container{
     /*This shall contain all the product divs*/
-    width: 85%;
+    width: 90%;
     text-align: center;
     margin: auto;
     display: flex;
@@ -28,7 +28,7 @@
     width: 250px;
     border-radius: 5px;
     background-color: rgb(242, 242, 242);
-    text-align: left;
+    text-align: center;
     align-items: center;
     border: 1px rgb(242, 242, 242) solid;
     position: relative;
@@ -36,6 +36,7 @@
 .product-picture{
     border-radius: 5px;
     max-height: 200px;
+    max-width: 100%;
     align-self: center;
 }
 .price-tag{
