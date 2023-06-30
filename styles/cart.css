@@ -86,6 +86,10 @@
     transition: 0.5s;
 }
 
+.hidden{
+    display: none;
+}
+
 #waiting-time{
     font-weight: bold;
 }

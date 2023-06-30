@@ -18,6 +18,11 @@ const CartDatasource = {
       ? price + SHIPPING_CONTEXT[shippingMethod].price
       : price;
   },
+  getOriginalPrice: () =>
+    LocalStorageDatasource.getCart().reduce(
+      (prev, { quantity, pricePerUnit }) => prev + quantity * pricePerUnit,
+      0
+    ),
   getWaitingTime: (shippingMethod) =>
     SHIPPING_CONTEXT[shippingMethod].waitingTimeWeeks,
   getShippingPrice: (shippingMethod) => SHIPPING_CONTEXT[shippingMethod].price,
