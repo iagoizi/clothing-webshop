@@ -13,6 +13,7 @@
     padding: 12px;
     text-decoration: none;
     color: white;
+    border-radius: 8px;
 }
 
 #navbar a:hover {
