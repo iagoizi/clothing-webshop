@@ -80,10 +80,13 @@
         <img class="logo" src="../img/common/logo.png" style="top: 70px;">
         <div class="banner-text">
             <h1> Clothes Company </h1>
-            <h2>Welcome to our website, <?php echo $_SESSION['name']; ?>, you were last online: <?php echo $_SESSION['date'];
+            <h2>Welcome to our website, <?php echo $_SESSION["name"]; ?>, you were last online: <?php 
+            
+            echo strval($_SESSION["date"]);
+            
             $email = $_SESSION['email'];
             $id = $_SESSION['id'];
-            $currentDate = date('Y-m-d');
+            $currentDate = date('Y-m-d H:i:s');
             $connection = mysqli_connect('localhost', 'Webshop_user', 'Webshop_password', 'webshop');
             $check_query = "UPDATE `users` SET `LAST_ONLINE` = '$currentDate' WHERE `users`.`ID` = '$id' ";
             
@@ -114,7 +117,7 @@
             </ul>
         </nav>
     </div>
-    <div id="menuBtn" style="top: 50px;">
+    <div id="menuBtn" style="top: 75px;">
         <img src="../img/common/menu.png" id="menu">
     </div>
     <!--Features-->

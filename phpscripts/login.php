@@ -23,7 +23,7 @@ session_start();
 $_SESSION['email'] = $user['EMAIL'];
 $_SESSION['name'] = $user['USERNAME'];
 $_SESSION['id'] = $user['ID'];
-$_SESSION['date'] = $user;
+$_SESSION['date'] = $user['LAST_ONLINE'];
 if($user['IS_VERIFIED'])
 {
     header('location: ../modules/index.php');
