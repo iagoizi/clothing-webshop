@@ -3,109 +3,78 @@ but I decided to simply start over-->
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <title>PRODUCTS</title>
-    <link type="text/css" rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/mykyta-style.css" />
-    <link type="text/css" rel="stylesheet" href="../styles/navbar.css" />
 
-    <script>
-      function openLink(link) {
-        //Opens a link. This is to be called from clicking on divs with products.
-        window.location = link;
-      }
-    </script>
-  </head>
-  <body>
-    <nav id="navbar"></nav>
+<head>
+  <title>PRODUCTS</title>
+  <link type="text/css" rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/mykyta-style.css" />
+  <link type="text/css" rel="stylesheet" href="../styles/navbar.css" />
+  <link type="text/css" rel="stylesheet" href="../styles/products.css" />
 
-    <!-- -->
-    <div class="title-text">
-      <p>PRODUCTS</p>
-      <h1>Here is the product list:</h1>
-    </div>
+  <script>
+    function openLink(link) {
+      //Opens a link. This is to be called from clicking on divs with products.
+      window.location = link;
+    }
+  </script>
+</head>
 
-    <div class="product-container">
-      <div class="entry-aligner">
-        <div class="product-entry">
-          <img
-            src="https://i.imgur.com/nrwas9n.jpg"
-            alt="Failed to lod the image"
-            class="product-picture"
-          />
-          <p class="price-tag">150$</p>
-          <p class="product-name">Mother äüö</p>
-          <p class="available-amount-container">
-            Available: <b class="available-amount">6</b>
-          </p>
-          <p class="product-info">A factory new Motherboard</p>
-          <div class="add-to-cart-button-bar">
-            <div
-              class="add-to-cart-button-bar-button small-bottom-border"
-              onclick="openLink('+.html')"
-            >
-              +
-            </div>
-            <div
-              class="add-to-cart-button-bar-button"
-              onclick="openLink('-.html')"
-            >
-              -
-            </div>
-          </div>
-        </div>
-      </div>
+<body>
+  <nav id="navbar"></nav>
 
-      <div class="entry-aligner" onclick="">
-        <!--Going to a different page works fine. -->
-        <div class="product-entry">
-          <img
-            src="https://i.imgur.com/nrwas9n.jpg"
-            alt="Failed to lod the image"
-            class="product-picture"
-          />
-          <p class="price-tag">150$</p>
-          <p class="product-name">
-            Mother äüö
-            <!-- We don't seem to have a problem with these characters, since they are included in UTF-8 (probably). Let's 
-                        just hope that we won't have any in the future -->
-          </p>
-          <p class="available-amount-container">
-            Available: <b class="available-amount">6</b>
-          </p>
-          <p class="product-info">
-            A factory new Motherboardddd dddddddddddddddddddddddddddd
-            dddddddddddddddddddddddddddd dddddddddddddddddddddddddddd
-            dddddddddddddddddddddddddddd dddddddddddddddddddddddddddd
-            dddddddddddddddddddddddddddd dddddddddddddddddddddddddddddddd
-            <!-- I put this to test the script that limits the amount of characters per description. It works. -->
-          </p>
-          <div class="add-to-cart-button-bar">
-            <div
-              class="add-to-cart-button-bar-button small-bottom-border"
-              onclick="openLink('+.html')"
-            >
-              +
-            </div>
-            <div
-              class="add-to-cart-button-bar-button"
-              onclick="openLink('-.html')"
-            >
-              -
-            </div>
-          </div>
+  <!-- -->
+  <div class="title-text">
+    <p>PRODUCTS</p>
+    <h1>Here is the product list:</h1>
+  </div>
+
+  <div class="product-container">
+    <div id="product-01" class="entry-aligner">
+      <div class="product-entry">
+        <img src="https://i.imgur.com/nrwas9n.jpg" alt="Failed to lod the image" class="product-picture" />
+        <p class="price-tag">€77</p>
+        <p class="product-name">Mother ääää</p>
+        <p class="available-amount-container">
+          Available: <b class="available-amount">6</b>
+        </p>
+        <p class="product-info">A Motherboard</p>
+        <div class="add-to-cart-container">
+          <!-- The max will depend on the quantity we have available -->
+          <input  id="product-01-input" type="number" min="0" max="7" value="0"/>
+          <button class="add-to-cart-btn" onclick="addProductToCart({id: 'product-01', description: 'Mother ääää', thumbnail: 'https:\/\/i.imgur.com/nrwas9n.jpg', pricePerUnit: 77 })">Add to cart</button>
         </div>
       </div>
     </div>
 
-    <iframe
-      src="../iframes/bottom.html"
-      frameborder="0"
-      scrolling="no"
-      class="footer-iframe"
-    ></iframe>
+    <div  id="product-02" class="entry-aligner">
+      <div class="product-entry">
+        <img src="https://i.imgur.com/nrwas9n.jpg" alt="Failed to lod the image" class="product-picture" />
+        <p class="price-tag">€150</p>
+        <p class="product-name">Mother äüö</p>
+        <p class="available-amount-container">
+          Available: <b class="available-amount">7</b>
+        </p>
+        <p class="product-info">A factory new Motherboard</p>
+        <div class="add-to-cart-container">
+          <!-- The max will depend on the quantity we have available -->
+          <input  id="product-02-input" type="number" min="0" max="7" value="0"/>
+          <button class="add-to-cart-btn" onclick="addProductToCart({id: 'product-02', description: 'Mother äüö', thumbnail: 'https:\/\/i.imgur.com/nrwas9n.jpg', pricePerUnit: 150 })">Add to cart</button>
+        </div>
+      </div>
+    </div>
 
-    <script src="../scripts/check-length.js"></script>
-    <script src="../scripts/navbar.js"></script>
-  </body>
+  </div>
+
+
+  </div>
+
+  <iframe src="../iframes/bottom.html" frameborder="0" scrolling="no" class="footer-iframe"></iframe>
+
+  <script src="../scripts/check-length.js"></script>
+  <script src="../scripts/cart/cart-datasource.js"></script>
+  <script src="../scripts/cart/local-storage-datasource.js"></script>
+  <script src="../scripts/navbar.js"></script>
+  <script src="../scripts/products.js"></script>
+</body>
+
 </html>
