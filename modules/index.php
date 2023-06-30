@@ -18,24 +18,75 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
 </head>
 
 <body>
     <?php
     session_start();
+    if (!isset($_SESSION['width']))
+    {
+        echo "<script>
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '../phpscripts/setscreenres.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send('width=' + screenWidth + '&height=' + screenHeight);
+      </script>
+      ";
+    }
+
+
     if(!isset($_SESSION['name']))
     {
+        session_unset();
+        session_destroy();
         header('location: login.php');
     }
     ?>
 
-        <nav id="navbar"></nav>
+        <nav id="navbar">
+            <div id="user-container">
+                <img src="../img/common/user-profile-circle.png" id="user-profile-pic">
+                <b id="username">
+                    Logged in as <?php echo $_SESSION['name'].", OS: ";
+                        
+                        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+
+                        if (strpos($userAgent, 'Windows') !== false) {
+                            $os = 'Windows';
+                        } elseif (strpos($userAgent, 'Mac') !== false) {
+                            $os = 'Mac';
+                        } elseif (strpos($userAgent, 'Linux') !== false) {
+                            $os = 'Linux';
+                        } else {
+                            $os = 'Unknown';
+                        }
+                        echo $os.", Screen resolution: ";
+                        echo $_SESSION['width'].'x'.$_SESSION['height'];
+
+
+                    ?>
+                </b>
+            </div>
+        </nav>
 
     <section id="banner">
-        <img class="logo" src="../img/common/logo.png">
+        <img class="logo" src="../img/common/logo.png" id="clothing-picture">
         <div class="banner-text">
             <h1> Clothes Company </h1>
-            <h2>Welcome to our website, <?php echo $_SESSION['name'] ?></h2>
+            <h2>Welcome to our website, <?php echo $_SESSION['name']; ?>, you were last online: <?php echo $_SESSION['date'];
+            $email = $_SESSION['email'];
+            $id = $_SESSION['id'];
+            $currentDate = date('Y-m-d');
+            $connection = mysqli_connect('localhost', 'Webshop_user', 'Webshop_password', 'webshop');
+            $check_query = "UPDATE `users` SET `LAST_ONLINE` = '$currentDate' WHERE `users`.`ID` = '$id' ";
+            
+            $result = mysqli_query($connection, $check_query);
+            
+            ?></h2>
             <p> A STYLE FOR EVERY STORY.</p>
 
             <div class="banner-btn">
@@ -46,7 +97,7 @@
         </div>
 
     </section>
-    <div id="sideNav">
+    <div id="sideNav" >
         <nav>
             <ul>
                 <li> <a href="#banner">HOME</a></li>
@@ -60,7 +111,7 @@
             </ul>
         </nav>
     </div>
-    <div id="menuBtn">
+    <div id="menuBtn" style="top: 50px;">
         <img src="../img/common/menu.png" id="menu">
     </div>
     <!--Features-->
