@@ -77,7 +77,7 @@
         </nav>
 
     <section id="banner">
-        <img class="logo" src="../img/common/logo.png" id="clothing-picture">
+        <img class="logo" src="../img/common/logo.png" style="top: 70px;">
         <div class="banner-text">
             <h1> Clothes Company </h1>
             <h2>Welcome to our website, <?php echo $_SESSION['name']; ?>, you were last online: <?php echo $_SESSION['date'];
