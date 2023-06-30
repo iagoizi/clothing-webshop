@@ -1,5 +1,9 @@
 const CartDatasource = {
   list: () => LocalStorageDatasource.getCart(),
+  getItemPrice: ({ quantity, pricePerUnit }) =>
+    quantity *
+    pricePerUnit *
+    (quantity >= 16 ? 0.84 : quantity >= 8 ? 0.92 : 1),
   getPrice: (shippingMethod) => {
     const price = LocalStorageDatasource.getCart().reduce(
       (prev, { quantity, pricePerUnit }) =>

@@ -9,9 +9,20 @@ const createCartItemElement = (item, isCheckout = false) => {
   product.appendChild(img);
 
   const info = document.createElement("div");
-  const price = item.pricePerUnit * item.quantity;
-  info.innerHTML = `
-        <div id="${item.id}-price">€${price}</div>
+  const price = CartDatasource.getItemPrice(item);
+  const priceView = document.createElement("div");
+  priceView.textContent = `€${formatPrice(price)}`;
+  priceView.id = `${item.id}-price`;
+  const oldPriceView = document.createElement("span");
+  oldPriceView.classList.add("old-price");
+  oldPriceView.id = `#${item.id}-old-price`;
+  let expectedPrice = item.quantity * item.pricePerUnit;
+  oldPriceView.textContent =
+    price < expectedPrice ? `€${formatPrice(expectedPrice)}` : "";
+  priceView.appendChild(oldPriceView);
+  info.appendChild(priceView);
+
+  info.innerHTML += `
         <div id="${item.id}-description">${item.description}</div>
         `;
   if (!isCheckout) {
@@ -33,12 +44,24 @@ const createCartItemElement = (item, isCheckout = false) => {
         removeFromView(item.id);
       }
     });
-    inputQuantity.addEventListener("change", (element) =>
-      CartDatasource.updateItem(item.id, {
+    inputQuantity.addEventListener("change", (element) => {
+      const updatedItem = {
         ...item,
         quantity: +element.currentTarget.value,
-      })
-    );
+      };
+
+      CartDatasource.updateItem(item.id, updatedItem);
+
+      const newPrice = CartDatasource.getItemPrice(updatedItem);
+
+      const priceViewToChange = document.querySelector(`#${item.id}-price`);
+      priceViewToChange.textContent = `€${formatPrice(newPrice)}`;
+      expectedPrice = updatedItem.quantity * updatedItem.pricePerUnit;
+
+      oldPriceView.textContent =
+        newPrice < expectedPrice ? `€${formatPrice(expectedPrice)}` : "";
+      priceViewToChange.appendChild(oldPriceView);
+    });
     info.appendChild(inputQuantity);
   } else {
     const staticQuantity = document.createElement("p");
@@ -72,4 +95,8 @@ function removeFromView(id) {
   setTimeout(function () {
     itemToRemove.remove();
   }, 500);
+}
+
+function formatPrice(price) {
+  return (Math.round(price * 100) / 100).toFixed(2);
 }
