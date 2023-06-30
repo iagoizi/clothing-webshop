@@ -6,7 +6,7 @@ const LocalStorageDatasource = {
       localStorage.setItem("cart", JSON.stringify([]));
     }
 
-    return storedCart;
+    return storedCart ?? [];
   },
   updateCart: (updatedCart) =>
     localStorage.setItem("cart", JSON.stringify(updatedCart)),
