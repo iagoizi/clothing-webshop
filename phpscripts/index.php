@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -49,31 +48,29 @@
     ?>
 
         <nav id="navbar">
-            <!-- <div id="user-container">
+            <div id="user-container">
                 <img src="../img/common/user-profile-circle.png" id="user-profile-pic">
                 <b id="username">
-                    Logged in as <?php 
-                    
-                        // echo $_SESSION['name'].", OS: ";
+                    Logged in as <?php echo $_SESSION['name'].", OS: ";
                         
-                        // $userAgent = $_SERVER['HTTP_USER_AGENT'];
+                        $userAgent = $_SERVER['HTTP_USER_AGENT'];
 
-                        // if (strpos($userAgent, 'Windows') !== false) {
-                        //     $os = 'Windows';
-                        // } elseif (strpos($userAgent, 'Mac') !== false) {
-                        //     $os = 'Mac';
-                        // } elseif (strpos($userAgent, 'Linux') !== false) {
-                        //     $os = 'Linux';
-                        // } else {
-                        //     $os = 'Unknown';
-                        // }
-                        // echo $os.", Screen resolution: ";
-                        // echo $_SESSION['width'].'x'.$_SESSION['height'];
+                        if (strpos($userAgent, 'Windows') !== false) {
+                            $os = 'Windows';
+                        } elseif (strpos($userAgent, 'Mac') !== false) {
+                            $os = 'Mac';
+                        } elseif (strpos($userAgent, 'Linux') !== false) {
+                            $os = 'Linux';
+                        } else {
+                            $os = 'Unknown';
+                        }
+                        echo $os.", Screen resolution: ";
+                        echo $_SESSION['width'].'x'.$_SESSION['height'];
 
 
                     ?>
                 </b>
-            </div> -->
+            </div>
         </nav>
 
     <section id="banner">

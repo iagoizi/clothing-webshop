@@ -23,10 +23,10 @@ session_start();
 $_SESSION['email'] = $user['EMAIL'];
 $_SESSION['name'] = $user['USERNAME'];
 $_SESSION['id'] = $user['ID'];
-
+$_SESSION['date'] = $user;
 if($user['IS_VERIFIED'])
 {
-    header('location: ../modules/index.html');
+    header('location: ../modules/index.php');
     exit;
 }
 else
